@@ -12,7 +12,8 @@
 <link
 	href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css"
 	rel="stylesheet">
-<link href="https://cdn.bootcss.com/bulma/0.6.2/css/bulma.min.css" rel="stylesheet">
+<link href="https://cdn.bootcss.com/bulma/0.6.2/css/bulma.min.css"
+	rel="stylesheet">
 </head>
 <body>
 	<div class="container">
@@ -52,8 +53,8 @@
 													<input type="text" class="form-control" name="sorry_sen"
 														placeholder="好啊">
 												</div>
-												<button class="col-sm-1 control-label" name="sorry_remove">
-													X</button>
+												<button type="button" class="col-sm-1 control-label"
+													name="sorry_remove">X</button>
 											</div>
 											<div class="form-group">
 												<label class="col-sm-2 control-label"> A: </label>
@@ -61,7 +62,8 @@
 													<input type="text" class="form-control" name="sorry_sen"
 														placeholder="别说我是一等良民">
 												</div>
-												<button class="col-sm-1 control-label" name="sorry_remove">
+												<button type="button" class="col-sm-1 control-label"
+													name="sorry_remove">
 													X</label>
 											</div>
 											<div class="form-group">
@@ -70,7 +72,8 @@
 													<input type="text" class="form-control" name="sorry_sen"
 														placeholder="就算你们真的想要诬告我">
 												</div>
-												<button class="col-sm-1 control-label" name="sorry_remove">
+												<button type="button" class="col-sm-1 control-label"
+													name="sorry_remove">
 													X</label>
 											</div>
 											<div class="form-group">
@@ -79,7 +82,8 @@
 													<input type="text" class="form-control" name="sorry_sen"
 														placeholder="我有的是钱找律师帮我打官司">
 												</div>
-												<button class="col-sm-1 control-label" name="sorry_remove">
+												<button type="button" class="col-sm-1 control-label"
+													name="sorry_remove">
 													X</label>
 											</div>
 											<div class="form-group">
@@ -88,7 +92,8 @@
 													<input type="text" class="form-control" name="sorry_sen"
 														placeholder="我想我根本不用坐牢">
 												</div>
-												<button class="col-sm-1 control-label" name="sorry_remove">
+												<button type="button" class="col-sm-1 control-label"
+													name="sorry_remove">
 													X</label>
 											</div>
 											<div class="form-group">
@@ -97,7 +102,8 @@
 													<input type="text" class="form-control" name="sorry_sen"
 														placeholder="你别以为有钱了不起啊">
 												</div>
-												<button class="col-sm-1 control-label" name="sorry_remove">
+												<button type="button" class="col-sm-1 control-label"
+													name="sorry_remove">
 													X</label>
 											</div>
 											<div class="form-group">
@@ -106,7 +112,8 @@
 													<input type="text" class="form-control" name="sorry_sen"
 														placeholder="sorry 有钱是真的能为所欲为的">
 												</div>
-												<button class="col-sm-1 control-label" name="sorry_remove">
+												<button type="button" class="col-sm-1 control-label"
+													name="sorry_remove">
 													X</label>
 											</div>
 											<div class="form-group">
@@ -115,7 +122,8 @@
 													<input type="text" class="form-control" name="sorry_sen"
 														placeholder="不过我相信你不会明白这种感觉">
 												</div>
-												<button class="col-sm-1 control-label" name="sorry_remove">
+												<button type="button" class="col-sm-1 control-label"
+													name="sorry_remove">
 													X</label>
 											</div>
 											<div class="form-group">
@@ -124,7 +132,8 @@
 													<input type="text" class="form-control" name="sorry_sen"
 														placeholder="不明白 不明白">
 												</div>
-												<button class="col-sm-1 control-label" name="sorry_remove">
+												<button type="button" class="col-sm-1 control-label"
+													name="sorry_remove">
 													X</label>
 											</div>
 										</form>
@@ -239,7 +248,7 @@
 	}
 	var templateName = $('#template').val()
 	$("button[name='" + templateName + "_remove']").bind('click', function() {
-		console.log("shit")
+		$(this).prev().children().attr("placeholder", "");
 	});
 	$('#render').bind('click', function() {
 		var $btn = $(this).button('loading')
