@@ -21,9 +21,11 @@ import lombok.Getter;
 import lombok.Setter;
 
 /**
- * @Description:
- * @author: lizhihao
- * @date: 2018/3/15 13:26
+ * 
+ * 上传到腾讯COS系统
+ * 
+ * @author DZG
+ * @since V1.0 2018年3月23日
  */
 @ConfigurationProperties(prefix = "qcloud")
 @Setter

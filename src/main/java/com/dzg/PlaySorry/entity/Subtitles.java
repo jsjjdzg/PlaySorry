@@ -4,7 +4,11 @@ import lombok.Getter;
 import lombok.Setter;
 
 /**
- * Created by lizhihao on 2018/3/11.
+ * 
+ * 模版文件
+ * 
+ * @author DZG
+ * @since V1.0 2018年3月23日
  */
 @Getter
 @Setter

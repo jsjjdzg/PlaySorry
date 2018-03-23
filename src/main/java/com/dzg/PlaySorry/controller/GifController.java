@@ -53,7 +53,7 @@ public class GifController {
 			map.put("result", filePath);
 		} catch (Exception e) {
 			map.put("code", "1");
-			map.put("result", e.getMessage());
+			map.put("result", "创建失败");
 		}
 		return map;
 	}
