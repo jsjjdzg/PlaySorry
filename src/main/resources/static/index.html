@@ -223,6 +223,13 @@
 				</div>
 			</div>
 			<div class="row">
+				<div class="col-md-12">
+					<div class="col-md-3"></div>
+					<div class="col-md-6"></div>
+					<div class="col-md-3"></div>
+				</div>
+			</div>
+			<div class="row">
 				<div class="col-md-12 text-center">
 					<a href="https://github.com/jsjjdzg/PlaySorry" , target="_blank">
 						<svg aria-hidden="true" class="w3-opacity" height="24"
@@ -281,6 +288,7 @@
 			if (msg.code == '0') {
 				alertMessage("生成成功！快去看看吧！");
 				$('#download').attr('href', msg.result);
+				$('#result').attr('src', msg.result);
 			} else {
 				alertMessage("服务器爆掉了，请稍后再试!");
 			}
