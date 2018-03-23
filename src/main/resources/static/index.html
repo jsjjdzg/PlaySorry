@@ -211,22 +211,7 @@
 				<div class="col-md-12">
 					<p>
 						<img id="result" class="center-block img-responsive" src="">
-						<a id="download" href="#" target="_blank">
-							<button id="downloadbtn" type="button"
-								class="btn btn-default center-block hidden"
-								aria-label="Left Align">
-								猛击打开<span class="glyphicon glyphicon-download-alt"
-									aria-hidden="true"></span>
-							</button>
-						</a>
 					</p>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-md-12">
-					<div class="col-md-3"></div>
-					<div class="col-md-6"></div>
-					<div class="col-md-3"></div>
 				</div>
 			</div>
 			<div class="row">
@@ -250,8 +235,14 @@
 	$('a[data-toggle="tab"]').on('shown.bs.tab', function(e) {
 		$('#template').val(e.target.id)
 	})
-	function alertMessage(message) {
-		$('#alertMessage').text(message);
+	function alertMessage(num, message) {
+		if (num == 1) {
+			$('#alertMessage').text(message);
+			$('#alertMessage').attr("class", "alert alert-success")
+		} else {
+			$('#alertMessage').text(message);
+			$('#alertMessage').attr("class", "alert alert-danger")
+		}
 	}
 	var templateName = $('#template').val()
 	$("button[name='" + templateName + "_remove']").bind('click', function() {
@@ -286,11 +277,11 @@
 			dataType : 'json'
 		}).done(function(msg) {
 			if (msg.code == '0') {
-				alertMessage("生成成功！快去看看吧！");
+				alertMessage(1, "生成成功！快去看看吧！");
 				$('#download').attr('href', msg.result);
 				$('#result').attr('src', msg.result);
 			} else {
-				alertMessage("服务器爆掉了，请稍后再试!");
+				alertMessage(0, "服务器爆掉了，请稍后再试!");
 			}
 		}).error(function(jqxhr, textStatus, errorThrown) {
 			alertMessage("服务器爆掉了，请稍后再试！");

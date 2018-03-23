@@ -1,5 +1,6 @@
 package com.dzg.PlaySorry.service;
 
+import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.nio.file.Path;
@@ -53,6 +54,15 @@ public class GifService {
 	 * @since 2018年3月23日
 	 */
 	public String renderGif(Subtitles subtitles) {
+		// 删除之前剩余的gif文件
+		File fileDir = new File(tempPath);
+		File[] gifFils = fileDir.listFiles();
+		for (int i = 0; i < gifFils.length; i++) {
+			if (gifFils[i].getName().endsWith("gif")) {
+				gifFils[i].delete();
+			}
+		}
+
 		String assPath = renderAss(subtitles);
 		String gifPath = Paths.get(tempPath).resolve(UUID.randomUUID() + ".gif").toString();
 		String videoPath = Paths.get(tempPath).resolve(subtitles.getTemplateName() + "/template.mp4").toString();
@@ -76,6 +86,15 @@ public class GifService {
 	 * @since 2018年3月23日
 	 */
 	private String renderAss(Subtitles subtitles) {
+		// 删除之前剩余的ass文件
+		File fileDir = new File(tempPath);
+		File[] gifFils = fileDir.listFiles();
+		for (int i = 0; i < gifFils.length; i++) {
+			if (gifFils[i].getName().endsWith("ass")) {
+				gifFils[i].delete();
+			}
+		}
+
 		Path path = Paths.get(tempPath).resolve(UUID.randomUUID().toString().replace("-", "") + ".ass");
 		Configuration cfg = new Configuration(Configuration.VERSION_2_3_27);
 		cfg.setDefaultEncoding("UTF-8");
