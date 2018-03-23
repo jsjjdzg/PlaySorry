@@ -12,7 +12,7 @@
 <link
 	href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css"
 	rel="stylesheet">
-
+<link href="https://cdn.bootcss.com/bulma/0.6.2/css/bulma.min.css" rel="stylesheet">
 </head>
 <body>
 	<div class="container">
@@ -34,7 +34,7 @@
 						<ul class="nav nav-tabs">
 							<li class="active"><a href="#panel-1" data-toggle="tab"
 								id="sorry">为所欲为</a></li>
-							<li><a href="#panel-2" data-toggle="tab" id="wangjingze">王境泽</a>
+							<!-- <li><a href="#panel-2" data-toggle="tab" id="wangjingze">王境泽</a> -->
 							</li>
 						</ul>
 						<div class="tab-content">
@@ -42,72 +42,90 @@
 								<div class="row">
 									<div class="col-md-6">
 										<img class="center-block img-responsive" alt="为所欲为"
-											src="http://p5m79jjxo.bkt.clouddn.com/sorry.jpg">
+											src="sorry.jpg">
 									</div>
 									<div class="col-md-6 pre-scrollable">
 										<form class="form-horizontal" role="form">
 											<div class="form-group">
 												<label class="col-sm-2 control-label"> A: </label>
-												<div class="col-sm-10">
+												<div class="col-sm-9">
 													<input type="text" class="form-control" name="sorry_sen"
 														placeholder="好啊">
 												</div>
+												<button class="col-sm-1 control-label" name="sorry_remove">
+													X</button>
 											</div>
 											<div class="form-group">
 												<label class="col-sm-2 control-label"> A: </label>
-												<div class="col-sm-10">
+												<div class="col-sm-9">
 													<input type="text" class="form-control" name="sorry_sen"
 														placeholder="别说我是一等良民">
 												</div>
+												<button class="col-sm-1 control-label" name="sorry_remove">
+													X</label>
 											</div>
 											<div class="form-group">
 												<label class="col-sm-2 control-label"> A: </label>
-												<div class="col-sm-10">
+												<div class="col-sm-9">
 													<input type="text" class="form-control" name="sorry_sen"
 														placeholder="就算你们真的想要诬告我">
 												</div>
+												<button class="col-sm-1 control-label" name="sorry_remove">
+													X</label>
 											</div>
 											<div class="form-group">
 												<label class="col-sm-2 control-label"> A: </label>
-												<div class="col-sm-10">
+												<div class="col-sm-9">
 													<input type="text" class="form-control" name="sorry_sen"
 														placeholder="我有的是钱找律师帮我打官司">
 												</div>
+												<button class="col-sm-1 control-label" name="sorry_remove">
+													X</label>
 											</div>
 											<div class="form-group">
 												<label class="col-sm-2 control-label"> A: </label>
-												<div class="col-sm-10">
+												<div class="col-sm-9">
 													<input type="text" class="form-control" name="sorry_sen"
 														placeholder="我想我根本不用坐牢">
 												</div>
+												<button class="col-sm-1 control-label" name="sorry_remove">
+													X</label>
 											</div>
 											<div class="form-group">
 												<label class="col-sm-2 control-label"> B: </label>
-												<div class="col-sm-10">
+												<div class="col-sm-9">
 													<input type="text" class="form-control" name="sorry_sen"
 														placeholder="你别以为有钱了不起啊">
 												</div>
+												<button class="col-sm-1 control-label" name="sorry_remove">
+													X</label>
 											</div>
 											<div class="form-group">
 												<label class="col-sm-2 control-label"> A: </label>
-												<div class="col-sm-10">
+												<div class="col-sm-9">
 													<input type="text" class="form-control" name="sorry_sen"
 														placeholder="sorry 有钱是真的能为所欲为的">
 												</div>
+												<button class="col-sm-1 control-label" name="sorry_remove">
+													X</label>
 											</div>
 											<div class="form-group">
 												<label class="col-sm-2 control-label"> A: </label>
-												<div class="col-sm-10">
+												<div class="col-sm-9">
 													<input type="text" class="form-control" name="sorry_sen"
 														placeholder="不过我相信你不会明白这种感觉">
 												</div>
+												<button class="col-sm-1 control-label" name="sorry_remove">
+													X</label>
 											</div>
 											<div class="form-group">
 												<label class="col-sm-2 control-label"> C: </label>
-												<div class="col-sm-10">
+												<div class="col-sm-9">
 													<input type="text" class="form-control" name="sorry_sen"
 														placeholder="不明白 不明白">
 												</div>
+												<button class="col-sm-1 control-label" name="sorry_remove">
+													X</label>
 											</div>
 										</form>
 									</div>
@@ -219,6 +237,10 @@
 	function alertMessage(message) {
 		$('#alertMessage').text(message);
 	}
+	var templateName = $('#template').val()
+	$("button[name='" + templateName + "_remove']").bind('click', function() {
+		console.log("shit")
+	});
 	$('#render').bind('click', function() {
 		var $btn = $(this).button('loading')
 		$('#render').prop('disabled', true);
@@ -233,16 +255,6 @@
 			}
 			all.push(e.value)
 		})
-		/* 				if (!ischange) {
-		 $('#download').attr(
-		 'href',
-		 "http://p5m79jjxo.bkt.clouddn.com/" + template
-		 + ".gif");
-		 $btn.button('reset')
-		 $('#render').prop('disabled', false);
-		 $('#downloadbtn').removeClass('hidden')
-		 return;
-		 } */
 
 		var json = {
 			"templateName" : template,
